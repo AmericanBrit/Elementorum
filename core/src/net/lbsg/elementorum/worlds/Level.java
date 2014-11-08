@@ -1,5 +1,6 @@
 package net.lbsg.elementorum.worlds;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
@@ -48,6 +49,7 @@ public class Level extends BaseScreen {
 	// Dispose:
 	@Override
 	public void dispose() {
-		
+		map.dispose();
+		mapRenderer.dispose();
 	}
 }
