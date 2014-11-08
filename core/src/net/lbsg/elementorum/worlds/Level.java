@@ -1,5 +1,9 @@
 package net.lbsg.elementorum.worlds;
 
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+
 /**
  * @author Nicolás A. Ortega
  * @copyright Stepan Subbotin
