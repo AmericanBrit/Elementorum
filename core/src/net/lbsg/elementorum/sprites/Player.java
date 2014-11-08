@@ -1,13 +1,7 @@
 package net.lbsg.elementorum.sprites;
-package input.gamefromscratch.com;
 
-import com.badlogic.gdx.ApplicationListener;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.GL10;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.TextureRegion;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 public class Player extends Sprite{
 	public Player(TextureRegion region){
