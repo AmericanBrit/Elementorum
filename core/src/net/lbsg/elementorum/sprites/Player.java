@@ -1,8 +1,9 @@
 package net.lbsg.elementorum.sprites;
 
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.TextureRegion;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.Gdx;
 public class Player extends Sprite{
 	public Player(TextureRegion region){
 		super(region);
