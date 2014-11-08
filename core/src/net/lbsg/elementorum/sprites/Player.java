@@ -10,7 +10,7 @@ public class Player extends Sprite{
 		
 	}
 	
-	 @Override
+	
 	    public void render() {        
 	       
 	        
