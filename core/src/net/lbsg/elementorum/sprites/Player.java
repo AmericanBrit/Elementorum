@@ -4,32 +4,24 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.Gdx;
+
 public class Player extends Sprite{
 	public Player(TextureRegion region){
 		super(region);
-		
-		
 	}
 	
-	
-	    public void render() {        
-	       
-	        
-	        if(Gdx.input.isKeyPressed(Input.Keys.A)){
-	                translateX(-1f);
-	                
-	            
-	        }
-	        if(Gdx.input.isKeyPressed(Input.Keys.D)){
-	                translateX(1f);
-	           
-	        }
-	        if(Gdx.input.isKeyPressed(Input.Keys.W)){
-	        		translateY(1f);
-	        		
-	        }
-	        if(Gdx.input.isKeyPressed(Input.Keys.D)){
-	        		translateY(-1f);
-	        }
-	    }
+	public void render() {
+		if(Gdx.input.isKeyPressed(Input.Keys.A)) {
+			translateX(-1f);
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.D)) {
+			translateX(1f);
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.W)){
+			translateY(1f);
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.D)){
+			translateY(-1f);
+		}
+	}
 }
