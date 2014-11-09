@@ -92,13 +92,23 @@ public class Level extends BaseScreen {
 		// Draw spell
 		if(spell != null) spell.render(delta, batch);
 		batch.end();
-		/*for(int i = 0; i < walls.size; i++){
-			if(spell.getDirection()==0 || spell.getDirection()==2)
-				spellBounds = setBounds(spell.getX(), spell.getY(), 17, 31);
-			else
-				spellBounds = setBounds(spell.getX(), spell.getY(), 31, 17);
-		}*/
 		
+		/*if(spell.getDirection()==0 || spell.getDirection()==2)
+			spell.setBounds(spell.getX(), spell.getY(), 17, 31);
+		else
+			spell.setBounds(spell.getX(), spell.getY(), 31, 17);
+		*/
+		if(spell != null) {
+		collisionLoop:
+			for(int i = 0; i < walls.size; i++) {
+				if(spell.getBoundingRectangle().overlaps(walls.get(i))) {
+					spell = null;
+					break collisionLoop;
+				}
+				
+			}
+		
+		}
 		
 	}
 	

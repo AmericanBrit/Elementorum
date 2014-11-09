@@ -9,11 +9,9 @@ public class Spell extends Sprite{
 	private int direction;
 	private final float SPEED = 300;
 	private String type;
-	private Texture phil;
 
 	public Spell(String imgpath, int direction, String type, float x, float y){
 		super(new Texture(imgpath));
-		//phil = new Texture(imgpath);
 		System.out.println(imgpath);
 		this.direction = direction;
 		this.type = type;
@@ -31,7 +29,6 @@ public class Spell extends Sprite{
 		else
 			translateX(SPEED*delta);
 		super.draw(batch);
-		//batch.draw(phil, getX(), getY());
 	}
 	
 	public int getDirection(){
