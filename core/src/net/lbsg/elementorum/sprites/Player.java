@@ -8,11 +8,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 
-public class Player extends Sprite{
+public class Player extends Sprite {
 	private Array<Rectangle> walls;
 	private final float SPEED = 16f;
 	private int direction;
-	public Player(String imgpath, float x, float y, Array<Rectangle> walls){
+	public Player(String imgpath, float x, float y, Array<Rectangle> walls) {
 		super(new Texture(imgpath));
 		direction = 0;
 		setCenter(x, y);

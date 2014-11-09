@@ -38,13 +38,16 @@ public class Level extends BaseScreen {
 		super("Game");
 		
 		cam = new OrthographicCamera();
+		// Setup camera viewport
 		cam.setToOrtho(false, Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
 		cam.update();
 		
 		batch = new SpriteBatch();
+		// Load map
 		map =  new TmxMapLoader().load("Lvl1.tmx");
 		mapRenderer = new OrthogonalTiledMapRenderer(map);
 		
+		// Load walls as rectangles in an array
 		MapObjects wallobjects = map.getLayers().get("Walls").getObjects();
 		for(int i = 0; i < wallobjects.getCount(); i++) {
 			RectangleMapObject obj = (RectangleMapObject) wallobjects.get(i);
@@ -59,11 +62,14 @@ public class Level extends BaseScreen {
 	public void render(float delta) {
 		super.render(delta);
 		
+		// Center camera on player
 		cam.position.set(player.getX(), player.getY(), 0f);
 		cam.update();
+		// Render the map
 		mapRenderer.setView(cam);
 		mapRenderer.render();
 		
+		// Draw player
 		batch.setProjectionMatrix(cam.combined);
 		batch.begin();
 		player.render(delta, batch);
