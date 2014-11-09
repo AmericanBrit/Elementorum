@@ -25,4 +25,5 @@ public class Spell extends Sprite{
 			translateX(SPEED*delta*-1);
 	}
 	
+	public String getType() { return type; }
 }
