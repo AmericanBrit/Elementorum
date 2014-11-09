@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Player extends Sprite{
-	private final float SPEED = 150f;
+	private final float SPEED = 50f;
 	private int direction;
 	public Player(String imgpath, float x, float y){
 		super(new Texture(imgpath));
@@ -17,16 +17,16 @@ public class Player extends Sprite{
 	
 	public void render(float delta, SpriteBatch batch) {
 		if(Gdx.input.isKeyPressed(Input.Keys.A)) {
-			translateX(-SPEED*delta);
+			translateX(-SPEED);
 			direction = 1;
 		} else if(Gdx.input.isKeyPressed(Input.Keys.D)) {
-			translateX(SPEED*delta);
+			translateX(SPEED);
 			direction = 3;
 		} else if(Gdx.input.isKeyPressed(Input.Keys.W)){
-			translateY(SPEED*delta);
+			translateY(SPEED);
 			direction = 0;
 		} else if(Gdx.input.isKeyPressed(Input.Keys.S)){
-			translateY(-SPEED*delta);
+			translateY(-SPEED);
 			direction = 2;
 		}
 		
