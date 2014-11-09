@@ -55,7 +55,7 @@ public class Player extends Sprite {
 			direction = 3;
 		} else if(Gdx.input.isKeyPressed(Input.Keys.W)){
 			translateY(SPEED);
-			if(timer%2==0) setTexture(texture[2]);
+			if(timer < 4) setTexture(texture[2]);
 			else setTexture(texture[3]);
 			
 			collisionLoop:
@@ -68,7 +68,7 @@ public class Player extends Sprite {
 			direction = 0;
 		} else if(Gdx.input.isKeyPressed(Input.Keys.S)){
 			translateY(-SPEED);
-			if(timer%2==0) setTexture(texture[4]);
+			if(timer < 4) setTexture(texture[4]);
 			else { setTexture(texture[5]); }
 			
 			collisionLoop:
@@ -82,7 +82,7 @@ public class Player extends Sprite {
 		}
 		
 		timer++;
-		if(timer == 10) timer = 0;
+		if(timer == 7) timer = 0;
 		
 		super.draw(batch);
 	}
