@@ -24,6 +24,7 @@ public class Level extends BaseScreen {
 	private OrthographicCamera cam;
 	private TiledMapRenderer mapRenderer;
 	
+	// Entity variables
 	private SpriteBatch batch;
 	private Player player;
 	

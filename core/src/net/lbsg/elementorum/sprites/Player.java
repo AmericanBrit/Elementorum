@@ -18,14 +18,11 @@ public class Player extends Sprite{
 	public void render(float delta, SpriteBatch batch) {
 		if(Gdx.input.isKeyPressed(Input.Keys.A)) {
 			translateX(-SPEED*delta);
-		}
-		else if(Gdx.input.isKeyPressed(Input.Keys.D)) {
+		} else if(Gdx.input.isKeyPressed(Input.Keys.D)) {
 			translateX(SPEED*delta);
-		}
-		else if(Gdx.input.isKeyPressed(Input.Keys.W)){
+		} else if(Gdx.input.isKeyPressed(Input.Keys.W)){
 			translateY(SPEED*delta);
-		}
-		else if(Gdx.input.isKeyPressed(Input.Keys.S)){
+		} else if(Gdx.input.isKeyPressed(Input.Keys.S)){
 			translateY(-SPEED*delta);
 		}
 		
