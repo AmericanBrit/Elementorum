@@ -2,6 +2,7 @@ package net.lbsg.elementorum.worlds;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
@@ -32,6 +33,7 @@ public class Level extends BaseScreen {
 	private SpriteBatch batch;
 	private Player player;
 	private Array<Rectangle> walls = new Array<Rectangle>();
+	private Texture wall;
 	
 	// Constructor:
 	public Level() {
@@ -55,6 +57,7 @@ public class Level extends BaseScreen {
 			walls.add(new Rectangle(rect.x, rect.y, 16, 16));
 		}
 		player = new Player("Player.png", 128, 128, walls);
+		wall = new Texture("Wall.png");
 	}
 	
 	// Update:
@@ -72,6 +75,9 @@ public class Level extends BaseScreen {
 		// Draw player
 		batch.setProjectionMatrix(cam.combined);
 		batch.begin();
+		for(int i = 0; i < walls.size; i++) {
+			batch.draw(wall, walls.get(i).x, walls.get(i).y);
+		}
 		player.render(delta, batch);
 		batch.end();
 	}
