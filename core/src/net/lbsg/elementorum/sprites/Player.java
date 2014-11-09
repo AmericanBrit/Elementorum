@@ -1,27 +1,34 @@
 package net.lbsg.elementorum.sprites;
 
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Player extends Sprite{
-	public Player(TextureRegion region){
-		super(region);
+	private final float SPEED = 300f;
+	
+	public Player(String imgpath, float x, float y){
+		super(new Texture(imgpath));
+		
+		setOrigin(x, y);
 	}
 	
-	public void render() {
+	public void render(float delta, SpriteBatch batch) {
 		if(Gdx.input.isKeyPressed(Input.Keys.A)) {
-			translateX(-1f);
+			translateX(-SPEED*delta);
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.D)) {
-			translateX(1f);
+			translateX(SPEED*delta);
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.W)){
-			translateY(1f);
+			translateY(SPEED*delta);
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.D)){
-			translateY(-1f);
+		if(Gdx.input.isKeyPressed(Input.Keys.S)){
+			translateY(-SPEED*delta);
 		}
+		
+		super.draw(batch);
 	}
 }
