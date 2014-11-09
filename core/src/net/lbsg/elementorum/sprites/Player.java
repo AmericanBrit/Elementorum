@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 
 public class Player extends Sprite {
 	private Array<Rectangle> walls;
@@ -24,6 +25,9 @@ public class Player extends Sprite {
 		
 		if(Gdx.input.isKeyPressed(Input.Keys.A)) {
 			translateX(-SPEED);
+			/*if(delta%2==0) *Sprite1*
+			 else *Sprite2*
+			*/
 			collisionLoop:
 			for(int i = 0; i < walls.size; i++) {
 				if(getBoundingRectangle().overlaps(walls.get(i))) {
@@ -34,6 +38,9 @@ public class Player extends Sprite {
 			direction = 1;
 		} else if(Gdx.input.isKeyPressed(Input.Keys.D)) {
 			translateX(SPEED);
+			/*if(delta%2==0) *Sprite1*
+			 else *Sprite2*
+			*/
 			collisionLoop:
 			for(int i = 0; i < walls.size; i++) {
 				if(getBoundingRectangle().overlaps(walls.get(i))) {
@@ -44,6 +51,9 @@ public class Player extends Sprite {
 			direction = 3;
 		} else if(Gdx.input.isKeyPressed(Input.Keys.W)){
 			translateY(SPEED);
+			/*if(delta%2==0) *Sprite1*
+			 else *Sprite2*
+			*/
 			collisionLoop:
 			for(int i = 0; i < walls.size; i++) {
 				if(getBoundingRectangle().overlaps(walls.get(i))) {
@@ -54,6 +64,9 @@ public class Player extends Sprite {
 			direction = 0;
 		} else if(Gdx.input.isKeyPressed(Input.Keys.S)){
 			translateY(-SPEED);
+			/*if(delta%2==0) *Sprite1*
+			 else *Sprite2*
+			*/
 			collisionLoop:
 			for(int i = 0; i < walls.size; i++) {
 				if(getBoundingRectangle().overlaps(walls.get(i))) {

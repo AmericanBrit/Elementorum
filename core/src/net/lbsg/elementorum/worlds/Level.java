@@ -12,6 +12,8 @@ import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 
 import net.lbsg.elementorum.sprites.*;
 
@@ -34,6 +36,8 @@ public class Level extends BaseScreen {
 	private Player player;
 	private Array<Rectangle> walls = new Array<Rectangle>();
 	private Texture wall;
+	private Spell spell;
+	private Rectangle spellBounds;
 	
 	// Constructor:
 	public Level() {
@@ -71,6 +75,10 @@ public class Level extends BaseScreen {
 		// Render the map
 		mapRenderer.setView(cam);
 		mapRenderer.render();
+		// Makes spells
+		if(Gdx.input.isKeyPressed(Input.Keys.J)&&spell==null){
+			spell = new Spell("fireball1.png", player.getDirection(), "Fire", player.getX(), player.getY());
+		}
 		
 		// Draw player
 		batch.setProjectionMatrix(cam.combined);
@@ -78,8 +86,20 @@ public class Level extends BaseScreen {
 		for(int i = 0; i < walls.size; i++) {
 			batch.draw(wall, walls.get(i).x, walls.get(i).y);
 		}
+		
 		player.render(delta, batch);
+		
+		// Draw spell
+		if(spell != null) spell.render(delta, batch);
 		batch.end();
+		/*for(int i = 0; i < walls.size; i++){
+			if(spell.getDirection()==0 || spell.getDirection()==2)
+				spellBounds = setBounds(spell.getX(), spell.getY(), 17, 31);
+			else
+				spellBounds = setBounds(spell.getX(), spell.getY(), 31, 17);
+		}*/
+		
+		
 	}
 	
 	// Dispose:
