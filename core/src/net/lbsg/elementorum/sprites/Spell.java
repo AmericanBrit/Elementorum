@@ -12,20 +12,19 @@ public class Spell extends Sprite{
 
 	public Spell(String imgpath, int direction, String type, float x, float y){
 		super(new Texture(imgpath));
-		System.out.println(imgpath);
 		this.direction = direction;
 		this.type = type;
-		this.setRotation(direction*90);
+		this.setRotation((direction-1)*90);
 		setCenter(x,y);
 	}
 	
 	public void render(float delta, SpriteBatch batch){
 		if (direction == 0)
-			translateY(SPEED*delta*-1);
+			translateY(SPEED*delta);
 		else if (direction == 1)
 			translateX(SPEED*delta*-1);
 		else if (direction == 2)
-			translateY(SPEED*delta);
+			translateY(SPEED*delta*-1);
 		else
 			translateX(SPEED*delta);
 		super.draw(batch);
