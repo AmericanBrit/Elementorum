@@ -38,6 +38,7 @@ public class Level extends BaseScreen {
 	private Texture wall;
 	private Spell spell;
 	private Rectangle spellBounds;
+	private char ranLetter;
 	
 	// Constructor:
 	public Level() {
@@ -75,10 +76,9 @@ public class Level extends BaseScreen {
 		// Render the map
 		mapRenderer.setView(cam);
 		mapRenderer.render();
+		
 		// Makes spells
-		if(Gdx.input.isKeyPressed(Input.Keys.J)&&spell==null){
-			spell = new Spell("fireball1.png", player.getDirection(), "Fire", player.getX(), player.getY());
-		}
+		shootSpell();
 		
 		// Draw player
 		batch.setProjectionMatrix(cam.combined);
@@ -93,11 +93,6 @@ public class Level extends BaseScreen {
 		if(spell != null) spell.render(delta, batch);
 		batch.end();
 		
-		/*if(spell.getDirection()==0 || spell.getDirection()==2)
-			spell.setBounds(spell.getX(), spell.getY(), 17, 31);
-		else
-			spell.setBounds(spell.getX(), spell.getY(), 31, 17);
-		*/
 		if(spell != null) {
 		collisionLoop:
 			for(int i = 0; i < walls.size; i++) {
@@ -117,4 +112,21 @@ public class Level extends BaseScreen {
 	public void dispose() {
 		map.dispose();
 	}
+	
+	public void shootSpell(){
+			
+		if(Gdx.input.isKeyPressed(Input.Keys.P)&& spell==null){
+			spell = new Spell("Player_Forward1.png", player.getDirection(), "Hooman", player.getX(), player.getY());
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.U)&&spell==null){
+			spell = new Spell("fireball1.png", player.getDirection(), "Fire", player.getX(), player.getY());
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.I)&& spell==null){
+			spell = new Spell("waterspout2.png", player.getDirection(), "Water", player.getX(), player.getY());
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.O)&& spell==null){
+			spell = new Spell("Rock.png", player.getDirection(), "Rock", player.getX(), player.getY());
+		}
+	}
+	
 }
