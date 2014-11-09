@@ -50,7 +50,6 @@ public class Level extends BaseScreen {
 			RectangleMapObject obj = (RectangleMapObject) wallobjects.get(i);
 			Rectangle rect = obj.getRectangle();
 			walls.add(new Rectangle(rect.x, rect.y, 16, 16));
-			System.out.println(walls.get(i).x + ", " + walls.get(i).y + " ; " + walls.get(i).width + ", " + walls.get(i).height);
 		}
 		player = new Player("Player.png", 128, 128, walls);
 	}
