@@ -39,6 +39,7 @@ public class Level extends BaseScreen {
 	private Spell spell;
 	private Rectangle spellBounds;
 	private char ranLetter;
+	private Texture[] tex;
 	
 	// Constructor:
 	public Level() {
@@ -61,7 +62,8 @@ public class Level extends BaseScreen {
 			Rectangle rect = obj.getRectangle();
 			walls.add(new Rectangle(rect.x, rect.y, 16, 16));
 		}
-		player = new Player("Player.png", 120, 120, walls);
+		Texture[] tex = new Texture[]{new Texture("Player_Side_Left.png"),new  Texture("Player_Side_Right.png"), new Texture("Player_Behind_1.png"), new Texture("Player_Behind_2.png"),new Texture("Player_Forward1.png"),new Texture("Player.png")};
+		player = new Player("Player.png", 120, 120, walls, tex);
 		wall = new Texture("Wall.png");
 	}
 	
