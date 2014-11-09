@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Player extends Sprite{
-	private final float SPEED = 16f;
+	private final float SPEED = 1f;
 	private int direction;
 	public Player(String imgpath, float x, float y){
 		super(new Texture(imgpath));
