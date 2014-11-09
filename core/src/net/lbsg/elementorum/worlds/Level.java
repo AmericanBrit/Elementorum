@@ -38,9 +38,8 @@ public class Level extends BaseScreen {
 		
 		batch = new SpriteBatch();
 		player = new Player("Player.png", 100, 100);
-		//map = new TmxMapLoader().load("gfx/lvl1.tmx");
-		//map =  new TmxMapLoader().load("LevelOne.tmx");
-		//mapRenderer = new OrthogonalTiledMapRenderer(map);
+		map =  new TmxMapLoader().load("LevelOne.tmx");
+		mapRenderer = new OrthogonalTiledMapRenderer(map);
 	}
 	
 	// Update:
@@ -49,10 +48,9 @@ public class Level extends BaseScreen {
 		super.render(delta);
 		
 		cam.position.set(player.getOriginX(), player.getOriginY(), 0f);
-		//cam.position.set(0f, 0f, 0f);
 		cam.update();
-		//mapRenderer.setView(cam);
-		//mapRenderer.render();
+		mapRenderer.setView(cam);
+		mapRenderer.render();
 		
 		batch.setProjectionMatrix(cam.combined);
 		batch.begin();
@@ -61,8 +59,8 @@ public class Level extends BaseScreen {
 	}
 	
 	// Dispose:
-	/*@Override
+	@Override
 	public void dispose() {
 		map.dispose();
-	}*/
+	}
 }
