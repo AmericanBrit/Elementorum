@@ -6,9 +6,11 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 public class Spell extends Sprite{
 	private int direction;
 	private final float SPEED = 500;
-	public Spell(TextureRegion region, int direction){
+	private String type;
+	public Spell(TextureRegion region, int direction, String type){
 		super(region);
 		this.direction = direction;
+		this.type = type;
 		this.setRotation(direction*90);
 	}
 	
