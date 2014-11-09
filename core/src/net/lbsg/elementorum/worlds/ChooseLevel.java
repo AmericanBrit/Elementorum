@@ -35,7 +35,6 @@ public class ChooseLevel extends BaseScreen{
 		
 		createButtons();
 	}
-	
 	private void createButtons() {
 		TextButton[] levels = new TextButton[34];
 		for(int x=34;x<=1; x--){
@@ -50,7 +49,6 @@ public class ChooseLevel extends BaseScreen{
 					}
 			});
 		}
-		
 		TextButton backButton = new TextButton("Back!", buttonStyle);
 		backButton.setPosition(Gdx.graphics.getWidth() / 2 - backButton.getWidth() / 2, 200);
 		mainStage.addActor(backButton);
@@ -61,9 +59,7 @@ public class ChooseLevel extends BaseScreen{
 			}
 		});
 				
-	}
-		
-	
+	}	
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -75,6 +71,5 @@ public class ChooseLevel extends BaseScreen{
 		mainStage.dispose();
 		buttonFont.dispose();
 	}
-	
-	
+
 }
