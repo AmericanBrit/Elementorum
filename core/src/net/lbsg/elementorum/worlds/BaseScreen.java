@@ -45,5 +45,5 @@ public class BaseScreen implements Screen {
 	
 	// Setter methods:
 	public void setDone(boolean done) { this.done = done; }
-	public void setNextScreen() { this.nextScreen = nextScreen; }
+	public void setNextScreen(String nextScreen) { this.nextScreen = nextScreen; }
 }
