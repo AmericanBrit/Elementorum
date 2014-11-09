@@ -47,7 +47,7 @@ public class Level extends BaseScreen {
 	public void render(float delta) {
 		super.render(delta);
 		
-		cam.position.set(player.getOriginX(), player.getOriginY(), 0f);
+		cam.position.set(player.getX(), player.getY(), 0f);
 		cam.update();
 		mapRenderer.setView(cam);
 		mapRenderer.render();
