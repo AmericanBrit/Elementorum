@@ -1,0 +1,17 @@
+package net.lbsg.elementorum.sprites;
+
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+
+public class Object extends Sprite{
+	private int direction;
+	private String type;
+	public Object(TextureRegion region, int direction, String type){
+		super(region);
+		this.direction = direction;
+		this.type = type;
+		this.setRotation(direction*90);
+	}
+	
+	public String getType() { return type; }
+}
