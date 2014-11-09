@@ -10,9 +10,12 @@ import com.badlogic.gdx.utils.Array;
 
 public class Player extends Sprite {
 	private Array<Rectangle> walls;
-	private final float SPEED = 16f;
+	private final float SPEED = 8f;
 	private int direction;
 	private Texture[] texture = new Texture[6];
+	
+	private int timer = 0;
+	
 	//String[] myStringArray = {"a","b","c"};
 	public Player(String imgpath, float x, float y, Array<Rectangle> walls, Texture[] tex) {
 		super(new Texture(imgpath));
@@ -52,7 +55,7 @@ public class Player extends Sprite {
 			direction = 3;
 		} else if(Gdx.input.isKeyPressed(Input.Keys.W)){
 			translateY(SPEED);
-			if(delta%2==0) setTexture(texture[2]);
+			if(timer%2==0) setTexture(texture[2]);
 			else setTexture(texture[3]);
 			
 			collisionLoop:
@@ -65,7 +68,7 @@ public class Player extends Sprite {
 			direction = 0;
 		} else if(Gdx.input.isKeyPressed(Input.Keys.S)){
 			translateY(-SPEED);
-			if(delta%2==0) setTexture(texture[4]);
+			if(timer%2==0) setTexture(texture[4]);
 			else { setTexture(texture[5]); }
 			
 			collisionLoop:
@@ -77,6 +80,9 @@ public class Player extends Sprite {
 			}
 			direction = 2;
 		}
+		
+		timer++;
+		if(timer == 10) timer = 0;
 		
 		super.draw(batch);
 	}
