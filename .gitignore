@@ -64,3 +64,6 @@ build/
 
 ## Jetbrains IDEs
 .idea/
+
+## IGNORE DUMB AUTOSAVE FILES
+*~
