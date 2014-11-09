@@ -56,7 +56,7 @@ public class Level extends BaseScreen {
 			Rectangle rect = obj.getRectangle();
 			walls.add(new Rectangle(rect.x, rect.y, 16, 16));
 		}
-		player = new Player("Player.png", 128, 128, walls);
+		player = new Player("Player.png", 120, 120, walls);
 		wall = new Texture("Wall.png");
 	}
 	
