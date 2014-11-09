@@ -3,10 +3,14 @@ package net.lbsg.elementorum.worlds;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.utils.Array;
 
 import net.lbsg.elementorum.sprites.*;
 
@@ -27,19 +31,28 @@ public class Level extends BaseScreen {
 	// Entity variables
 	private SpriteBatch batch;
 	private Player player;
+	private Array<Rectangle> walls = new Array<Rectangle>();
 	
 	// Constructor:
 	public Level() {
 		super("Game");
 		
 		cam = new OrthographicCamera();
-		cam.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		cam.setToOrtho(false, Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
 		cam.update();
 		
 		batch = new SpriteBatch();
-		player = new Player("Player.png", 100, 100);
-		map =  new TmxMapLoader().load("LevelOne.tmx");
+		map =  new TmxMapLoader().load("Lvl1.tmx");
 		mapRenderer = new OrthogonalTiledMapRenderer(map);
+		
+		MapObjects wallobjects = map.getLayers().get("Walls").getObjects();
+		for(int i = 0; i < wallobjects.getCount(); i++) {
+			RectangleMapObject obj = (RectangleMapObject) wallobjects.get(i);
+			Rectangle rect = obj.getRectangle();
+			walls.add(new Rectangle(rect.x, rect.y, 16, 16));
+			System.out.println(walls.get(i).x + ", " + walls.get(i).y + " ; " + walls.get(i).width + ", " + walls.get(i).height);
+		}
+		player = new Player("Player.png", 128, 128, walls);
 	}
 	
 	// Update:
