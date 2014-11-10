@@ -1,0 +1,5 @@
+TO DO LIST:
+ * Add animations for spells
+ * Fix player animations (https://github.com/libgdx/libgdx/wiki/2D-Animation)
+ * Fix collision between spells and walls
+ * Create collision between walls and obstacles
