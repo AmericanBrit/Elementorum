@@ -12,6 +12,7 @@ public class Spell extends Sprite{
 
 	public Spell(String imgpath, int direction, String type, float x, float y){
 		super(new Texture(imgpath));
+		System.out.println("Spell created");
 		this.direction = direction;
 		this.type = type;
 		if (type== "Fire" || type == "Rock") this.setRotation((direction-1)*90);
