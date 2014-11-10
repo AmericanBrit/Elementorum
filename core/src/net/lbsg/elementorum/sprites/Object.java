@@ -13,7 +13,6 @@ public class Object extends Sprite{
 		setOrigin(x,y);
 		direction = 0;
 	}
-	
-	
+
 	public String getType() { return type; }
 }
