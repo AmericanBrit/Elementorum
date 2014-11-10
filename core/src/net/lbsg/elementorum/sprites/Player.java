@@ -8,6 +8,15 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 
+/**
+ * @author Ethan Skier, Luke Lemke, Nicolás A. Ortega
+ * @copyright Stepan Subbotin
+ * @license GNU Affero GPLv3
+ * @year 2014
+ * 
+ * Description: Where the game works.
+ * 
+ */
 public class Player extends Sprite {
 	private Array<Rectangle> walls;
 	private final float SPEED = 8f;
@@ -16,7 +25,6 @@ public class Player extends Sprite {
 	
 	private int timer = 0;
 	
-	//String[] myStringArray = {"a","b","c"};
 	public Player(String imgpath, float x, float y, Array<Rectangle> walls, Texture[] tex) {
 		super(new Texture(imgpath));
 		direction = 0;

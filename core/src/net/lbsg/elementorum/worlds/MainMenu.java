@@ -12,6 +12,15 @@ import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 
+/**
+ * @author Stepan Subbotin, Nicolás A. Ortega
+ * @copyright Stepan Subbotin
+ * @license GNU Affero GPLv3
+ * @year 2014
+ * 
+ * Description: The main menu of the game
+ * 
+ */
 public class MainMenu extends BaseScreen {
 	
 	private BitmapFont textFont;

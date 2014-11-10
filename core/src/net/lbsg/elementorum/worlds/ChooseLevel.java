@@ -12,6 +12,15 @@ import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 
+/**
+ * @author Luke Lemke, Nicolás A. Ortega
+ * @copyright Stepan Subbotin
+ * @license GNU Affero GPLv3
+ * @year 2014
+ * 
+ * Description: Where the player chooses the level they want to play.
+ * 
+ */
 public class ChooseLevel extends BaseScreen{
 	private BitmapFont textFont;
 	private BitmapFont buttonFont;

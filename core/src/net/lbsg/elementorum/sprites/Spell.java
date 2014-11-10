@@ -5,6 +5,15 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+/**
+ * @author Luke Lemke, Nicolás A. Ortega
+ * @copyright Stepan Subbotin
+ * @license GNU Affero GPLv3
+ * @year 2014
+ * 
+ * Description: Where the game works.
+ * 
+ */
 public class Spell extends Sprite{
 	private int direction;
 	private final float SPEED = 300;

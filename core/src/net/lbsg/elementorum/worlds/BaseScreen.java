@@ -5,7 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 
 /**
- * @author Nicolás A. Ortega
+ * @author Stepan Subbotin, Nicolás A. Ortega
  * @copyright Stepan Subbotin
  * @license GNU Affero GPLv3
  * @year 2014
