@@ -16,12 +16,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  */
 public class Spell extends Sprite{
 	private int direction;
-	private final float SPEED = 300;
+	private final float SPEED = 30; //Don't raise any higher: was 300, which is why the spells weren't working - Meek 
 	private String type;
 
 	public Spell(String imgpath, int direction, String type, float x, float y){
 		super(new Texture(imgpath));
-		System.out.println("Spell created");
 		this.direction = direction;
 		this.type = type;
 		if (type== "Fire" || type == "Rock") this.setRotation((direction-1)*90);
