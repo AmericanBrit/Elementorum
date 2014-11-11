@@ -1,5 +1,4 @@
 TO DO LIST:
- * REPORT: Bug in spell creation. Only creating one spell, never becomes null & doesn't render!
  * Add animations for spells
  * Fix player animations (https://github.com/libgdx/libgdx/wiki/2D-Animation)
  * Fix collision between spells and walls
