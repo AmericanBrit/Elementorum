@@ -18,7 +18,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import net.lbsg.elementorum.sprites.*;
 
 /**
- * @author Nicolás A. Ortega
+ * @author Luke Lemke, Nicolás A. Ortega
  * @copyright Stepan Subbotin
  * @license GNU Affero GPLv3
  * @year 2014
