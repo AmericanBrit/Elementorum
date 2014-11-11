@@ -11,12 +11,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  * @license GNU Affero GPLv3
  * @year 2014
  * 
- * Description: Where the game works.
+ * Description: Where the spells are made.
  * 
  */
 public class Spell extends Sprite{
 	private int direction;
-	private final float SPEED = 30; 
+	private final float SPEED = 23; 
 	private String type;
 
 	public Spell(String imgpath, int direction, String type, float x, float y){
