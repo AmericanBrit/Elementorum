@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
- * @author Luke Lemke, Nicolás A. Ortega
+ * @author Meek, Luke Lemke, Nicolás A. Ortega
  * @copyright Stepan Subbotin
  * @license GNU Affero GPLv3
  * @year 2014
@@ -16,7 +16,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  */
 public class Spell extends Sprite{
 	private int direction;
-	private final float SPEED = 30; //Don't raise any higher: was 300, which is why the spells weren't working - Meek 
+	private final float SPEED = 30; 
 	private String type;
 
 	public Spell(String imgpath, int direction, String type, float x, float y){
@@ -24,7 +24,7 @@ public class Spell extends Sprite{
 		this.direction = direction;
 		this.type = type;
 		if (type== "Fire" || type == "Rock") this.setRotation((direction-1)*90);
-		else if(type == "Water"|| type == "Hooman") this.setRotation((direction)*90); // I see what you did there, hooman :D
+		else if(type == "Water"|| type == "Hooman") this.setRotation((direction)*90);
 		setCenter(x,y);
 	}
 	
