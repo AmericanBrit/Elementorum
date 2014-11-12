@@ -40,6 +40,7 @@ public class Level extends BaseScreen {
 	private Rectangle spellBounds;
 	private char ranLetter;
 	private Texture[] tex;
+	private int timer;
 	
 	// Constructor:
 	public Level() {
@@ -104,7 +105,13 @@ public class Level extends BaseScreen {
 				}
 				
 			}
-		
+		}
+		if(spell != null && (spell.getType()=="Water" || spell.getType()=="Rock")){
+			if(timer > 8){
+				timer = 0;
+				spell = null;
+			}
+			timer++;
 		}
 		
 	}
