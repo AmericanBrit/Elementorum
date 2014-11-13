@@ -37,7 +37,6 @@ public class Level extends BaseScreen {
 	private Array<Rectangle> walls = new Array<Rectangle>();
 	private Texture wall;
 	private Spell spell;
-	private Rectangle spellBounds;
 	private char ranLetter;
 	private Texture[] tex;
 	private int timer;
