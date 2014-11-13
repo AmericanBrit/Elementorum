@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
- * @author Meek, Luke Lemke, Nicolás A. Ortega
+ * @author Meekialle McGee, Luke Lemke, Nicolás A. Ortega
  * @copyright Stepan Subbotin
  * @license GNU Affero GPLv3
  * @year 2014
