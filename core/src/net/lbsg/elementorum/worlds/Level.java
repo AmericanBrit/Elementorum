@@ -41,8 +41,11 @@ public class Level extends BaseScreen {
 	private char ranLetter;
 	private Texture[] tex;
 	private int timer;
+	private final int rockLimit = 10; //Sets total number of rocks allowed to be set
+	private Spell[] rockSpell = new Spell[rockLimit];//Array of rocks spell
+	private int rockCount = 0; //Counts number of rocks used
 	
-	// Constructor:
+	// Constructor: 
 	public Level() {
 		super("Game");
 		
@@ -94,8 +97,17 @@ public class Level extends BaseScreen {
 		
 		// Draw spell
 		if(spell != null) spell.render(delta, batch);
+		
+		//Check if rockSpell has been used
+		if(rockSpell[0] != null){
+			//Render all the rocks
+			for(int i = 0; i < rockCount; i++){
+				rockSpell[i].render(delta, batch);
+			}
+		}
 		batch.end();
 		
+		//Checks for collisions between spells and walls
 		if(spell != null) {
 		collisionLoop:
 			for(int i = 0; i < walls.size; i++) {
@@ -103,10 +115,10 @@ public class Level extends BaseScreen {
 					spell = null;
 					break collisionLoop;
 				}
-				
 			}
 		}
-		if(spell != null && (spell.getType()=="Water" || spell.getType()=="Rock")){
+		
+		if(spell != null && (spell.getType()=="Water")){
 			if(timer > 8){
 				timer = 0;
 				spell = null;
@@ -133,8 +145,34 @@ public class Level extends BaseScreen {
 		if(Gdx.input.isKeyPressed(Input.Keys.I)&& spell==null){
 			spell = new Spell("waterspout2.png", player.getDirection(), "Water", player.getX(), player.getY());
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.O)&& spell==null){
-			spell = new Spell("Rock.png", player.getDirection(), "Rock", player.getX(), player.getY());
+		//Creates rock as long as total number of rocks is less than limit
+		if(Gdx.input.isKeyPressed(Input.Keys.O) && rockCount < rockLimit){
+			boolean rockColliding = false; 
+			//If the rock is not on the wall, create a rock
+			rockSpell[rockCount] = new Spell("Rock.png", player.getDirection(), "Rock", player.getX(), player.getY());
+			//Checks for collisions between created rock and wall
+			rockWallCollisionLoop:
+				for(int i = 0; i < walls.size; i++) {
+					if(rockSpell[rockCount].getBoundingRectangle().overlaps(walls.get(i))){
+						rockColliding = true;
+						break rockWallCollisionLoop;
+					}
+					
+				}
+			rockSelfCollisionLoop:
+				for(int i = 0; i < rockCount; i++){
+					if(rockSpell[rockCount].getBoundingRectangle().overlaps(rockSpell[i].getBoundingRectangle())){
+						if(!rockColliding) rockColliding = true;
+						break rockSelfCollisionLoop;
+					}
+				}
+			if(!rockColliding)
+			{
+				rockCount ++;
+				//Shows that a rock actually HAS been created, only if the created rock doesn't overlap with a wall
+				System.out.println("Rock #: " + rockCount + " has been created!");
+				rockColliding = false;
+			}
 		}
 	}
 	
