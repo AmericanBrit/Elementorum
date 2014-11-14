@@ -30,9 +30,7 @@ public class Spell extends Sprite{
 	}
 	
 	public void render(float delta, SpriteBatch batch) {
-		if(type == "Water" || type == "Rock"){
-		}
-		else{
+		if(type.equals("Fire") || type.equals("Hooman")) {
 			if(direction == 0) translateY(SPEED);
 			else if(direction == 1) translateX(-SPEED);
 			else if(direction == 2) translateY(-SPEED);
