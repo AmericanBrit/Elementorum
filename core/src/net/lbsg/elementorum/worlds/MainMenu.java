@@ -37,7 +37,7 @@ public class MainMenu extends BaseScreen {
 		Gdx.input.setInputProcessor(mainStage);
 		
 		buttonFont = new BitmapFont();
-		buttonFont.scale(0.5f);
+		buttonFont.scale(1.25f);
 		
 		buttonStyle = new TextButtonStyle();
 		buttonStyle.up = buttonSkin.getDrawable("Button2");
