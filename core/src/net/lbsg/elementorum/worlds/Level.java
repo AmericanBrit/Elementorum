@@ -55,7 +55,7 @@ public class Level extends BaseScreen {
 		
 		batch = new SpriteBatch();
 		// Load map
-		map =  new TmxMapLoader().load("Lvl1.tmx");
+		map =  new TmxMapLoader().load("maps/Lvl1.tmx");
 		mapRenderer = new OrthogonalTiledMapRenderer(map);
 		
 		// Load walls as rectangles in an array
@@ -65,9 +65,9 @@ public class Level extends BaseScreen {
 			Rectangle rect = obj.getRectangle();
 			walls.add(new Rectangle(rect.x, rect.y, 16, 16));
 		}
-		Texture[] tex = new Texture[]{new Texture("Player_Side_Left.png"),new  Texture("Player_Side_Right.png"), new Texture("Player_Behind_1.png"), new Texture("Player_Behind_2.png"),new Texture("Player_Forward1.png"),new Texture("Player.png")};
-		player = new Player("Player.png", 120, 120, walls, tex);
-		wall = new Texture("Wall.png");
+		Texture[] tex = new Texture[]{new Texture("sprites/Player_Side_Left.png"),new  Texture("sprites/Player_Side_Right.png"), new Texture("sprites/Player_Behind_1.png"), new Texture("sprites/Player_Behind_2.png"),new Texture("sprites/Player_Forward1.png"),new Texture("sprites/Player.png")};
+		player = new Player("sprites/Player.png", 120, 120, walls, tex);
+		wall = new Texture("tiles/Wall.png");
 	}
 	
 	// Update:
@@ -136,19 +136,19 @@ public class Level extends BaseScreen {
 	public void shootSpell(){
 			
 		if(Gdx.input.isKeyPressed(Input.Keys.P)&& spell==null){
-			spell = new Spell("Player_Forward1.png", player.getDirection(), "Hooman", player.getX(), player.getY());
+			spell = new Spell("sprites/Player_Forward1.png", player.getDirection(), "Hooman", player.getX(), player.getY());
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.U)&&spell==null){
-			spell = new Spell("fireball1.png", player.getDirection(), "Fire", player.getX(), player.getY());
+			spell = new Spell("sprites/fireball1.png", player.getDirection(), "Fire", player.getX(), player.getY());
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.I)&& spell==null){
-			spell = new Spell("waterspout2.png", player.getDirection(), "Water", player.getX(), player.getY());
+			spell = new Spell("sprites/waterspout2.png", player.getDirection(), "Water", player.getX(), player.getY());
 		}
 		//Creates rock as long as total number of rocks is less than limit
 		if(Gdx.input.isKeyPressed(Input.Keys.O) && rockCount < rockLimit){
 			boolean rockColliding = false; 
 			//If the rock is not on the wall, create a rock
-			rockSpell[rockCount] = new Spell("Rock.png", player.getDirection(), "Rock", player.getX(), player.getY());
+			rockSpell[rockCount] = new Spell("sprites/Rock.png", player.getDirection(), "Rock", player.getX(), player.getY());
 			//Checks for collisions between created rock and wall
 			rockWallCollisionLoop:
 				for(int i = 0; i < walls.size; i++) {
