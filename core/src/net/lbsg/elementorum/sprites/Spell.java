@@ -24,7 +24,8 @@ public class Spell extends Sprite{
 		super(new Texture(imgpath));
 		this.direction = direction;
 		this.type = type;
-		if(type == "Fire" || type == "Hooman" || type == "Water") setRotation((direction-1)*90);
+		if(type == "Fire" || type == "Hooman") setRotation((direction-1)*90);
+		else if(type == "Water") setRotation(-90);
 		else setRotation(180);
 		setCenter(x,y);
 	}
