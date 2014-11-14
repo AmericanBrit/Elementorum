@@ -16,16 +16,16 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  */
 public class Spell extends Sprite{
 	private int direction;
-	private final float SPEED = 30; 
+	private final float SPEED = 30;
+	// Types available are: Fire, Hooman, Water, Rock
 	private String type;
 
 	public Spell(String imgpath, int direction, String type, float x, float y){
 		super(new Texture(imgpath));
 		this.direction = direction;
 		this.type = type;
-		if (type== "Fire") this.setRotation((direction-1)*90);
-		else if(type == "Hooman") this.setRotation((direction)*90);
-		else if (type == "Rock") this.setRotation(180);
+		if(type == "Fire" || type == "Hooman" || type == "Water") this.setRotation((direction-1)*90);
+		else setRotation(180);
 		setCenter(x,y);
 	}
 	
