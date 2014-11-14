@@ -135,14 +135,22 @@ public class Level extends BaseScreen {
 	
 	public void shootSpell(){
 			
-		if(Gdx.input.isKeyPressed(Input.Keys.P)&& spell==null){
+		if(Gdx.input.isKeyPressed(Input.Keys.P) && spell==null){
 			spell = new Spell("sprites/Player_Forward1.png", player.getDirection(), "Hooman", player.getX(), player.getY());
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.U)&&spell==null){
+		if(Gdx.input.isKeyPressed(Input.Keys.U) &&spell==null){
 			spell = new Spell("sprites/fireball1.png", player.getDirection(), "Fire", player.getX(), player.getY());
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.I)&& spell==null){
-			spell = new Spell("sprites/waterspout2.png", player.getDirection(), "Water", player.getX(), player.getY());
+		if(Gdx.input.isKeyPressed(Input.Keys.I) && spell==null){
+			if(player.getDirection() == 0) {
+				spell = new Spell("sprites/waterspout2.png", player.getDirection(), "Water", player.getX(), player.getY() + 32);
+			} else if(player.getDirection() == 1) {
+				spell = new Spell("sprites/waterspout2.png", player.getDirection(), "Water", player.getX() - 16, player.getY());
+			} else if(player.getDirection() == 2) {
+				spell = new Spell("sprites/waterspout2.png", player.getDirection(), "Water", player.getX(), player.getY() - 16);
+			} else {
+				spell = new Spell("sprites/waterspout2.png", player.getDirection(), "Water", player.getX() + 32, player.getY());
+			}
 		}
 		//Creates rock as long as total number of rocks is less than limit
 		if(Gdx.input.isKeyPressed(Input.Keys.O) && rockCount < rockLimit){
