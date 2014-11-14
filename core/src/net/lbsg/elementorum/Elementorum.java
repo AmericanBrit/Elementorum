@@ -17,10 +17,8 @@ import net.lbsg.elementorum.worlds.*;
 public class Elementorum extends Game {
 	// Create:
 	@Override
-	public void create() {
-		setScreen(new Level());
-	}
-	
+	public void create() { setScreen(new MainMenu()); }
+
 	// Update:
 	@Override
 	public void render() {

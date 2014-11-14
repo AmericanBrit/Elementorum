@@ -1,7 +1,6 @@
 package net.lbsg.elementorum.worlds;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton.TextButtonStyle;
@@ -32,7 +31,7 @@ public class MainMenu extends BaseScreen {
 	public MainMenu() {
 		super("MainMenu");
 		mainStage = new Stage();
-		TextureAtlas buttonAtlas = new TextureAtlas("gfx/buttons.pack");
+		TextureAtlas buttonAtlas = new TextureAtlas("ui/Buttons.pack");
 		Skin buttonSkin = new Skin(buttonAtlas);
 		
 		Gdx.input.setInputProcessor(mainStage);
@@ -41,34 +40,35 @@ public class MainMenu extends BaseScreen {
 		buttonFont.scale(0.5f);
 		
 		buttonStyle = new TextButtonStyle();
-		buttonStyle.up = buttonSkin.getDrawable("button_green");
+		buttonStyle.up = buttonSkin.getDrawable("Button2");
+		buttonStyle.font = buttonFont;
 		
 		createButtons();
 	}		
 	
 	private void createButtons() {
 		TextButton playButton = new TextButton("Play", buttonStyle);
-		playButton.setPosition(Gdx.graphics.getWidth() / 2 - playButton.getWidth() / 2, 250);
+		playButton.setPosition(Gdx.graphics.getWidth() / 2 - playButton.getWidth() / 2, 300);
 		mainStage.addActor(playButton);
 		playButton.addListener(new ChangeListener() {
 			public void changed(ChangeEvent event, Actor actor) {
-				setNextScreen("Game");
+				setNextScreen("Level");
 				setDone(true);
 			}
 		});
 		
-		TextButton creditsButton = new TextButton("Credits", buttonStyle);
-		creditsButton.setPosition(Gdx.graphics.getWidth() / 2 - creditsButton.getWidth() / 2, 200);
+		/*TextButton creditsButton = new TextButton("Credits", buttonStyle);
+		creditsButton.setPosition(Gdx.graphics.getWidth() / 2 - creditsButton.getWidth() / 2, 250);
 		mainStage.addActor(creditsButton);
 		creditsButton.addListener(new ChangeListener() {
 			public void changed(ChangeEvent event, Actor actor) {
 				// Change to Credits Menu
 			}
-		});
+		});*/
 		
 		if(Gdx.app.getType() == ApplicationType.Desktop) {
 			TextButton exitButton = new TextButton("Exit", buttonStyle);
-			exitButton.setPosition(Gdx.graphics.getWidth() / 2 - exitButton.getWidth() / 2, creditsButton.getY() - exitButton.getHeight());
+			exitButton.setPosition(Gdx.graphics.getWidth() / 2 - exitButton.getWidth() / 2, 200);
 			mainStage.addActor(exitButton);
 			exitButton.addListener(new ChangeListener() {
 				public void changed(ChangeEvent event, Actor actor) {
