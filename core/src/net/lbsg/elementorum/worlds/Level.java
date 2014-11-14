@@ -167,9 +167,7 @@ public class Level extends BaseScreen {
 				}
 			if(!rockColliding)
 			{
-				rockCount ++;
-				//Shows that a rock actually HAS been created, only if the created rock doesn't overlap with a wall
-				System.out.println("Rock #: " + rockCount + " has been created!");
+				rockCount++;
 				rockColliding = false;
 			}
 		}
