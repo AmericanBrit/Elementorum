@@ -27,7 +27,7 @@ public class Player extends Sprite {
 	
 	public Player(String imgpath, float x, float y, Array<Rectangle> walls, Texture[] tex) {
 		super(new Texture(imgpath));
-		direction = 0;
+		direction = 2;
 		setCenter(x, y);
 		this.walls = walls;
 		for(int i = 0; i < 6; i++){
