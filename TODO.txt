@@ -6,3 +6,4 @@ TO DO LIST:
  * Make game code independent (basically make it so all we have to do to create a new level is insert a new tmx [tilemap] file)
  * Make the code for rock collisions & rendering look neater (make it it's own method)
  * Add collisions between rocks and player, rock and spells, etc.
+ * Is there a good way for us to have a group chat or meet up or something to make working on this easier?
