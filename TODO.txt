@@ -1,0 +1,8 @@
+TO DO LIST:
+ * Add animations for spells
+ * Fix player animations (https://github.com/libgdx/libgdx/wiki/2D-Animation)
+ * Fix collision between spells and walls
+ * Create collision between walls and obstacles
+ * Make game code independent (basically make it so all we have to do to create a new level is insert a new tmx [tilemap] file)
+ * Make the code for rock collisions & rendering look neater (make it it's own method)
+ * Add collisions between rocks and player, rock and spells, etc.

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="9" height="15" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="MainHole_Frozen" tilewidth="16" tileheight="16">
+  <image source="MainHole_Frozen.png" trans="ff00ff" width="48" height="48"/>
+ </tileset>
+ <tileset firstgid="10" name="FloorTileset" tilewidth="16" tileheight="16">
+  <image source="FloorTileset.png" trans="ff00ff" width="112" height="48"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="9" height="15">
+  <data encoding="base64" compression="zlib">
+   eJwTY2BgECMBMwIxExAz41HDAsSsQMw2SNSwAzEHEHOS6NeRjgF0Egpp
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <object gid="16" x="128" y="16"/>
+  <object gid="16" x="128" y="32"/>
+  <object gid="16" x="112" y="16"/>
+  <object gid="16" x="96" y="16"/>
+  <object gid="16" x="80" y="16"/>
+  <object gid="16" x="48" y="16"/>
+  <object gid="16" x="32" y="16"/>
+  <object gid="16" x="16" y="16"/>
+  <object gid="16" x="0" y="16"/>
+  <object gid="16" x="0" y="32"/>
+  <object gid="16" x="0" y="48"/>
+  <object gid="16" x="0" y="64"/>
+  <object gid="16" x="0" y="80"/>
+  <object gid="16" x="0" y="96"/>
+  <object gid="16" x="0" y="112"/>
+  <object gid="16" x="0" y="128"/>
+  <object gid="16" x="0" y="144"/>
+  <object gid="16" x="0" y="160"/>
+  <object gid="16" x="0" y="176"/>
+  <object gid="16" x="0" y="192"/>
+  <object gid="16" x="0" y="208"/>
+  <object gid="16" x="0" y="240"/>
+  <object gid="16" x="0" y="224"/>
+  <object gid="16" x="0" y="240"/>
+  <object gid="16" x="16" y="240"/>
+  <object gid="16" x="32" y="240"/>
+  <object gid="16" x="48" y="240"/>
+  <object gid="16" x="64" y="240"/>
+  <object gid="16" x="80" y="240"/>
+  <object gid="16" x="96" y="240"/>
+  <object gid="16" x="112" y="240"/>
+  <object gid="16" x="128" y="240"/>
+  <object gid="16" x="128" y="224"/>
+  <object gid="16" x="128" y="208"/>
+  <object gid="16" x="128" y="192"/>
+  <object gid="16" x="128" y="176"/>
+  <object gid="16" x="128" y="160"/>
+  <object gid="16" x="128" y="144"/>
+  <object gid="16" x="128" y="128"/>
+  <object gid="16" x="128" y="112"/>
+  <object gid="16" x="128" y="96"/>
+  <object gid="16" x="128" y="80"/>
+  <object gid="16" x="128" y="64"/>
+  <object gid="16" x="128" y="48"/>
+  <object gid="15" x="64" y="128"/>
+ </objectgroup>
+</map>

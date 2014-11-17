@@ -1,27 +1,48 @@
 package net.lbsg.elementorum;
 
-import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class Elementorum extends ApplicationAdapter {
-	SpriteBatch batch;
-	Texture img;
-	
+import net.lbsg.elementorum.worlds.*;
+
+/**
+ * @author Nicolás A. Ortega
+ * @copyright Stepan Subbotin
+ * @license GNU Affero GPLv3
+ * @year 2014
+ * 
+ * Description: The main class for the game.
+ * 
+ */
+public class Elementorum extends Game {
+	// Create:
 	@Override
-	public void create () {
-		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+	public void create() { setScreen(new MainMenu()); }
+
+	// Update:
+	@Override
+	public void render() {
+		// Obtain the current running screen
+		BaseScreen currentScreen = (BaseScreen)super.getScreen();
+		
+		// Update the screen
+		currentScreen.render(Gdx.graphics.getDeltaTime());
+		
+		// Switch if screen is done
+		if(currentScreen.isDone()) {
+			// Dispose of screen for proper memory management
+			currentScreen.dispose();
+			// Set the new screen:
+			if(currentScreen.getNextScreen().equals("Level")) {
+				setScreen(new Level());
+			}
+		}
 	}
-
+	
+	// Dispose:
 	@Override
-	public void render () {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();
+	public void dispose() {
+		super.getScreen().dispose();
+		super.dispose();
 	}
 }
